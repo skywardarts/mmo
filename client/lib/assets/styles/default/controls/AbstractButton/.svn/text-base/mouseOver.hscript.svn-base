@@ -1,0 +1,7 @@
+if(this.disabled) return;
+
+//if(Std.is(event.target, Component))
+	//	if(event.target.updateColorTween!=null)
+		if(event.target==this)
+			event.target.updateColorTween( new feffects.Tween(0, 50, 200, feffects.easing.Expo.easeOut ) );
+	CursorManager.setCursor(this.cursorOver);

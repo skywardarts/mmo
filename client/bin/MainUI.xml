@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<haxegui:Layout name="Main">
+<![CDATA[   
+TODO:
+* 
+]]>
+	<haxegui:controls:Button name="Login" label="Login" x="20" y="20" height="20">
+		<events>
+			<script type="text/hscript" action="mouseClick">
+			<![CDATA[
+			trace(event);
+			]]>
+			</script>
+		</events>
+	</haxegui:controls:Button>
+
+	<haxegui:controls:Button name="Register" label="Register" x="120" y="20" height="20">
+		<events>
+			<script type="text/hscript" action="mouseClick">
+			<![CDATA[
+			var window_register = root.getChildByName("Registration");
+			window_register.visible = !window_register.visible;
+			]]>
+			</script>
+		</events>
+	</haxegui:controls:Button>
+
+	<haxegui:Window name="Registration" x="300" y="30" width="360" height="240" sizeable="false" color="0xFFFFFF" visible="false">
+		<haxegui:containers:Container name="c1" x="10" y="20" color="0xFFFFFF">
+			<haxegui:containers:Container name="c1" x="10" y="10" color="0xFFFFFF">
+				<haxegui:controls:Label x="0" y="0">Username:</haxegui:controls:Label>
+				<haxegui:controls:Input name="Enter your username" x="80" y="0"></haxegui:controls:Input>
+			</haxegui:containers:Container>
+
+			<haxegui:containers:Container name="c2" x="10" y="50" color="0xFFFFFF">
+				<haxegui:controls:Label x="0" y="0">Password:</haxegui:controls:Label>
+				<haxegui:controls:Input name="Enter your password" x="80" y="0"></haxegui:controls:Input>
+			</haxegui:containers:Container>
+
+			<haxegui:containers:Container name="c3" x="10" y="80" color="0xFFFFFF">
+				<haxegui:controls:Label x="0" y="0">Remember:</haxegui:controls:Label>
+				<haxegui:controls:CheckBox name="Check to remember password" x="80" y="0" selected="true" />
+			</haxegui:containers:Container>
+
+			<haxegui:controls:Button name="Complete Registration" label="Submit" x="140" y="110" height="20">
+				<events>
+					<script type="text/hscript" action="mouseClick">
+					<![CDATA[
+					var username = this.parent.getChildByName("c1").getChildAt(1).getText();
+					var password = this.parent.getChildByName("c2").getChildAt(1).getText();
+					
+					root.ui.register_event.call_with([username, password]);
+					
+					]]>
+					</script>
+				</events>
+			</haxegui:controls:Button>
+		</haxegui:containers:Container>
+	</haxegui:Window>
+</haxegui:Layout>

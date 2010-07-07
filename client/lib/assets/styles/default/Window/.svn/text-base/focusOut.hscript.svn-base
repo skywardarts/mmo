@@ -1,0 +1,8 @@
+this.getElementsByClass(windowClasses.TitleBar).next().color = Color.darken(this.color, 20);
+this.getElementsByClass(windowClasses.TitleBar).next().redraw();
+//this.getElementsByClass(windowClasses.TitleBar).next().filters = null;
+//this.getElementsByClass(windowClasses.TitleBar).next().getElementsByClass(controls.Label).next().filters = null;
+
+
+
+this.getElementsByClass(windowClasses.WindowFrame).next().filters =[new flash.filters.DropShadowFilter (4, 45, DefaultStyle.DROPSHADOW, 0.4, 12, 12, 0.85, flash.filters.BitmapFilterQuality.LOW, false, false, false)];

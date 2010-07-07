@@ -1,0 +1,31 @@
+this.graphics.clear();
+
+var colors = [ Color.tint(this.color, .8), Color.clamp(this.color - 0x141414) ];
+
+if(parent.disabled)
+	colors = [ this.color, Color.clamp(this.color - 0x141414) ];
+
+var alphas = [ 100, 100 ];
+var ratios = [ 0, 0xFF ];
+var matrix = new flash.geom.Matrix();
+matrix.createGradientBox(16, .5*this.parent.box.height, .5*Math.PI, 0, 0);
+
+this.graphics.lineStyle (1, Color.clamp(this.color - 0x141414), 1, true,
+					flash.display.LineScaleMode.NONE,
+					flash.display.CapsStyle.ROUND,
+					flash.display.JointStyle.ROUND);
+
+this.graphics.beginGradientFill( flash.display.GradientType.LINEAR, colors, alphas, ratios, matrix );
+
+this.graphics.drawRoundRectComplex(0, 0, 16, .5*this.parent.box.height, 0, 0, 0, 4);
+
+this.graphics.endFill();
+
+this.moveTo( this.parent.box.width - 10, .5*this.parent.box.height );
+
+var shadow = new flash.filters.DropShadowFilter(
+	0, 45, DefaultStyle.DROPSHADOW,
+	0.5, 4, 4, 0.5,
+	flash.filters.BitmapFilterQuality.HIGH,
+	false, false, false );
+this.filters = [shadow];

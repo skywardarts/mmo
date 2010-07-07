@@ -1,0 +1,1 @@
+this.parent.adjustment.setValue(this.parent.adjustment.getValue()+this.parent.adjustment.object.step);

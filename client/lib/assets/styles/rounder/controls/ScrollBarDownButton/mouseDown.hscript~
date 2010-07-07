@@ -1,0 +1,21 @@
+if(this.disabled) return;
+
+
+	this.updateColorTween( new feffects.Tween(50, -50, 500, feffects.easing.Expo.easeOut) );
+	CursorManager.setCursor(this.cursorPress);
+
+/*
+if(parent.handleMotionTween!=null)
+parent.handleMotionTween.stop();
+
+parent.handleMotionTween = new feffects.Tween(  parent.handle.y,
+Math.min( parent.frame.height - parent.handle.height + 20, parent.frame.height - parent.handle.y + 20),
+1500,
+parent.handle, "y",
+feffects.easing.Expo.easeInOut
+);
+parent.handleMotionTween.setTweenHandlers( function ( e ) { parent.adjust(); } );
+parent.handleMotionTween.start();
+
+
+*/

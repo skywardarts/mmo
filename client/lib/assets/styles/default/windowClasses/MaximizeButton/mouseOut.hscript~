@@ -1,0 +1,11 @@
+if(this.disabled) return;
+
+event.target.filters = [];
+event.target.stopInterval();
+event.target.updateColorTween();
+event.target.color = this.getParentWindow().color;
+event.target.redraw();
+
+//event.target.updateColorTween( new feffects.Tween(event.buttonDown ? -50 : 50, 0, 1000, feffects.easing.Expo.easeOut ) );
+CursorManager.setCursor(Cursor.ARROW);
+

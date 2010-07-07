@@ -1,0 +1,4 @@
+CursorManager.setCursor (Cursor.HAND2);
+
+// var t = new feffects.Tween( 0, 1, 750, feffects.easing.Quad.easeInOut );
+// parent.handle.updatePositionTween( t, new flash.geom.Point(0, event.target.mouseY-parent.handle.y), parent.adjust );

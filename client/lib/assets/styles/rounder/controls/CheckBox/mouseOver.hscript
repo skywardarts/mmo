@@ -1,0 +1,2 @@
+if(!this.disabled)
+	CursorManager.setCursor(Cursor.HAND);

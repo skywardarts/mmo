@@ -1,0 +1,30 @@
+this.graphics.clear ();
+
+//this.graphics.lineStyle (1, Color.darken(this.color, 16), .5, true, flash.display.LineScaleMode.NONE, flash.display.CapsStyle.ROUND, flash.display.JointStyle.ROUND);
+var matrix = new flash.geom.Matrix();
+matrix.createGradientBox(this.parent.box.width + 10, this.parent.box.height + 10, .5*Math.PI, 0, 0);
+
+this.graphics.lineStyle(1);
+this.graphics.lineGradientStyle(flash.display.GradientType.LINEAR, [Color.tint(this.color, .5), Color.darken(this.color, 50)], [.2, .85], [0, 0xFF], matrix);
+
+this.graphics.beginFill (this.color, 0.5);
+this.graphics.drawRoundRect (0, 0, this.parent.box.width + 10, this.parent.box.height + 10, 8, 8);
+this.graphics.drawRect (10, 20, this.parent.box.width - 10, this.parent.box.height - 20);
+this.graphics.endFill ();
+
+if(!this.parent.isModal()) {
+	/* BL */
+	this.graphics.lineStyle(0,0,0);
+	this.graphics.beginFill( Color.tint(this.color, .85), .5);
+	this.graphics.drawRoundRectComplex(0,this.parent.box.height-10,20,20, 0, 0, 4, 0);
+	this.graphics.drawRect(10,this.parent.box.height-10,10,10);
+	this.graphics.endFill();
+	
+	/* BR */
+	this.graphics.lineStyle(0,0,0);
+	this.graphics.beginFill( Color.tint(this.color, .85), .5);
+	this.graphics.drawRoundRectComplex(this.parent.box.width-10,this.parent.box.height-10,20,20, 0, 0, 0, 4);
+	this.graphics.drawRect(this.parent.box.width-10,this.parent.box.height-10,10,10);
+	this.graphics.endFill();
+	
+}

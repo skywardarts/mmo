@@ -1,0 +1,12 @@
+/*
+this.graphics.clear();
+
+var i = parent.getChildIndex(this) ;
+var c = (i%2==0) ? Color.darken(this.color, 10) : this.color;
+if(this.selected) c = DefaultStyle.FOCUS;
+
+this.graphics.beginFill (c);
+this.graphics.drawRect (-this.x, 0, this.x+this.box.width, this.box.height);
+this.graphics.endFill ();
+
+*/

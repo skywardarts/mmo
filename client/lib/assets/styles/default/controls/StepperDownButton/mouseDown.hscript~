@@ -1,0 +1,12 @@
+if(!this.disabled) {
+	if(this.autoRepeat) {
+		//this.parent.__setValue(this.parent.__getValue() - this.parent.step);
+		//this.parent.adjustment.__setValue ( this.parent.adjustment.value - this.parent.adjustment.step );
+		this.parent.adjustment.object.value -= this.parent.adjustment.object.step;
+		this.parent.adjustment.adjust(this.parent.adjustment.object);
+		this.startIntervalDelayed(this.repeatsPerSecond, this.repeatWaitTime);
+
+	}
+	this.updateColorTween( new feffects.Tween(50, -50, 350, feffects.easing.Linear.easeOut) );
+	CursorManager.setCursor(this.cursorPress);
+}

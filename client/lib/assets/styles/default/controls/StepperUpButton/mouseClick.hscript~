@@ -1,0 +1,6 @@
+if(this.disabled) return;
+
+if(!this.autoRepeat)
+	this.parent.adjustment.setValue( this.parent.adjustment.getValue() - this.parent.adjustment.object.step);
+
+

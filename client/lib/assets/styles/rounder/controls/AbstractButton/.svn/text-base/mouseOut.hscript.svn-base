@@ -1,0 +1,4 @@
+if(this.disabled) return;
+if(event.target==this)
+event.target.updateColorTween( new feffects.Tween(event.buttonDown ? -50 : 50, 0, 300, feffects.easing.Expo.easeOut ) );
+CursorManager.setCursor(Cursor.ARROW);

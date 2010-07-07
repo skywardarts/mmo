@@ -1,0 +1,12 @@
+if(this.disabled) return;
+
+
+	if(this.hitTestObject( CursorManager.getInstance()._mc )) {
+		this.updateColorTween( new feffects.Tween(-50, 50, 150, feffects.easing.Linear.easeNone) );
+		CursorManager.setCursor(this.cursorOver);
+	}
+	else {
+		this.updateColorTween( new feffects.Tween(-50, 0, 120, feffects.easing.Linear.easeNone) );
+	}
+
+

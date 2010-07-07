@@ -1,0 +1,2 @@
+if(this.isModal()) return false;
+return true;

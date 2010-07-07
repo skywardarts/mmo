@@ -1,0 +1,8 @@
+<!ELEMENT Header EMPTY >
+<!ATTLIST Header compressed NMTOKEN #REQUIRED >
+<!ATTLIST Header fps NMTOKEN #REQUIRED >
+<!ATTLIST Header frameCount NMTOKEN #REQUIRED >
+<!ATTLIST Header height NMTOKEN #REQUIRED >
+<!ATTLIST Header version NMTOKEN #REQUIRED >
+<!ATTLIST Header width NMTOKEN #REQUIRED >
+

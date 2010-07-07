@@ -1,0 +1,32 @@
+if(parent.box==null) return;
+
+this.graphics.clear();
+
+var colors = this.disabled ?
+[ DefaultStyle.BACKGROUND, Color.darken(DefaultStyle.BACKGROUND, 20) ] :
+[ DefaultStyle.PROGRESS_BAR, Color.darken(DefaultStyle.PROGRESS_BAR, 20) ];
+
+var alphas = [ 1, 1 ];
+var ratios = [ 0, 0xFF ];
+var matrix = new flash.geom.Matrix();
+matrix.createGradientBox(parent.box.width, parent.box.height, .5*Math.PI, 0, 0);
+this.graphics.beginGradientFill( flash.display.GradientType.LINEAR, colors, alphas, ratios, matrix );
+this.graphics.drawRect(0, 0, parent.box.width*1.2-1, parent.box.height-1 );
+this.graphics.endFill();
+
+colors = this.disabled ?
+[ DefaultStyle.BACKGROUND, Color.tint(DefaultStyle.BACKGROUND, .5), Color.darken(DefaultStyle.BACKGROUND, 32) ] :
+[ DefaultStyle.PROGRESS_BAR, Color.tint(DefaultStyle.PROGRESS_BAR, .5), Color.darken(DefaultStyle.PROGRESS_BAR, 16) ];
+
+alphas = [ 1, .5, 0 ];
+ratios = [ 0, 0x80, 0xFF ];
+
+for(i in 0...12) {
+	this.graphics.beginGradientFill( flash.display.GradientType.LINEAR, colors, alphas, ratios, matrix );
+	this.graphics.moveTo(.1*i*parent.box.width + .05*parent.box.width, 0);
+	this.graphics.lineTo(.1*i*parent.box.width + .1*parent.box.width, 0);
+	this.graphics.lineTo(.1*i*parent.box.width + .05*parent.box.width, parent.box.height-1);
+	this.graphics.lineTo(.1*i*parent.box.width, parent.box.height-1);
+	this.graphics.lineTo(.1*i*parent.box.width + .05*parent.box.width, 0);
+	this.graphics.endFill();
+}

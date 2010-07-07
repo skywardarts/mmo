@@ -1,0 +1,19 @@
+this.graphics.clear();
+
+if(this.selected) {
+this.graphics.beginFill (this.color);
+this.graphics.drawRect (0, 0, this.box.width, this.box.height);
+this.graphics.endFill ();
+}
+
+var y = this.transform.pixelBounds.height;
+
+this.graphics.lineStyle(1, Color.BLACK, .5, false, flash.display.LineScaleMode.NONE);
+this.graphics.moveTo(12, 12);
+this.graphics.lineTo(12, y);
+
+for(i in 0...Math.round(y/24)) {
+this.graphics.moveTo(12, 12+24*i);
+this.graphics.lineTo(18, 12+24*i);
+}
+

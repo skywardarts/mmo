@@ -1,0 +1,39 @@
+var r = .5*Math.min( this.box.width, this.box.height );
+
+this.graphics.clear();
+
+var colors = [ Color.tint(this.color, .8), Color.clamp(this.color - 0x141414) ];
+var alphas = [ 100, 100 ];
+var ratios = [ 0, 0xFF ];
+var matrix = new flash.geom.Matrix();
+matrix.createGradientBox(this.box.width, this.box.height, .5*Math.PI, 0, 0);
+
+if(this.selected) {
+	ratios = [ 0x66, 0xFF ];
+	colors = [ Color.tint(this.color, .8), Color.darken(this.color, 30) ];
+
+	this.graphics.lineStyle (1, Color.darken(this.color, 20), 1, true, flash.display.LineScaleMode.NONE, flash.display.CapsStyle.ROUND, flash.display.JointStyle.ROUND);
+	this.graphics.beginGradientFill( flash.display.GradientType.LINEAR, colors, alphas, ratios, matrix );
+	this.graphics.drawCircle(r, r, r);
+	this.graphics.endFill();
+
+	colors = [Color.darken(this.color, 100), this.disabled ? Color.darken(DefaultStyle.BACKGROUND, 60) : Color.BLACK];
+	matrix.createGradientBox(r, r, .5*Math.PI, 0, 0);
+
+	this.graphics.lineStyle (1, Color.tint(this.color, .5), 1, true, flash.display.LineScaleMode.NONE, flash.display.CapsStyle.NONE, flash.display.JointStyle.ROUND);
+	this.graphics.beginGradientFill( flash.display.GradientType.LINEAR, colors, alphas, ratios, matrix );
+	this.graphics.drawCircle(r, r, .6*r);
+	this.graphics.endFill();
+}
+else {
+	this.graphics.lineStyle (1, Color.darken(this.color, 20), 1, true, flash.display.LineScaleMode.NONE, flash.display.CapsStyle.ROUND, flash.display.JointStyle.ROUND);
+	this.graphics.beginGradientFill( flash.display.GradientType.LINEAR, colors, alphas, ratios, matrix );
+	this.graphics.drawCircle (r, r, r);
+	this.graphics.endFill ();
+}
+
+if(this.disabled && this.label!=null) {
+	var fmt = DefaultStyle.getTextFormat();
+	fmt.color = Color.darken(DefaultStyle.BACKGROUND, 20);
+	this.label.tf.setTextFormat(fmt);
+}

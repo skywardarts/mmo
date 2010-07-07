@@ -1,0 +1,10 @@
+this.graphics.clear();
+
+var colors = [this.color, Color.darken(this.color, 30)];
+var matrix = new flash.geom.Matrix ();
+matrix.createGradientBox (8, this.parent.box.height - 16, .5*Math.PI, 0, 0);
+
+this.graphics.lineStyle(1, Color.darken(this.parent.color, 20), 1, true, flash.display.LineScaleMode.NONE, flash.display.CapsStyle.ROUND, flash.display.JointStyle.ROUND);
+this.graphics.beginGradientFill (flash.display.GradientType.LINEAR, colors, [1, 1], [0, 0xFF], matrix);
+this.graphics.drawRoundRect(0, 0, 8, this.parent.box.height - 16, 4, 4);
+this.graphics.endFill();

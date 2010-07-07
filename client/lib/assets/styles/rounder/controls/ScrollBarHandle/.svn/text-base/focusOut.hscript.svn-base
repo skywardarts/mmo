@@ -1,0 +1,2 @@
+if(this.stage.hasEventListener(flash.events.MouseEvent.MOUSE_MOVE))
+	this.stage.removeEventListener(flash.events.MouseEvent.MOUSE_MOVE, parent.onMouseMove);

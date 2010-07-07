@@ -1,0 +1,5 @@
+if(!this.disabled) {
+	//this.selected = !this.selected;
+	this.redraw();
+	this.updateColorTween( new feffects.Tween(50, 0, 150, feffects.easing.Linear.easeNone) );
+}

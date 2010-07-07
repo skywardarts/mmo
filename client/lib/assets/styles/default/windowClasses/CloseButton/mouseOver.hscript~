@@ -1,0 +1,19 @@
+if(this.disabled) return;
+
+
+this.color = Color.tint(Color.RED, .8);
+this.redraw();
+this.filters = [ new flash.filters.GlowFilter(Color.RED, 1, 6, 6, 1, flash.filters.BitmapFilterQuality.HIGH, false, false) ];
+
+this.setAction("interval", 
+"
+this.updateColorTween( new feffects.Tween(0, 150, 250, feffects.easing.Back.easeInOut ) );
+
+function reverse() {
+this.updateColorTween( new feffects.Tween(150, 0, 250, feffects.easing.Back.easeInOut ) );
+}
+Timer.delay(reverse, 250);
+");
+this.startInterval(2);
+
+CursorManager.setCursor(this.cursorOver);

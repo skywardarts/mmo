@@ -1,0 +1,6 @@
+if(this.disabled) return;
+// event.stopImmediatePropagation();
+// if(event.target == this.expander || this.expander.contains(event.target))
+// this.expander.updateColorTween( new feffects.Tween(0, 50, 200, feffects.easing.Expo.easeOut ) );
+this.redraw();
+

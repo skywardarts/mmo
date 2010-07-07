@@ -1,0 +1,12 @@
+this.graphics.clear();
+
+this.graphics.beginFill (this.color, this.selected ? 1 : 0);
+this.graphics.drawRect (0, 0, this.box.width, this.box.height);
+this.graphics.endFill ();
+
+// if(parent.getChildIndex(this)
+// if(parent.numChildren<=3) return;
+
+// this.graphics.lineStyle(1, Color.BLACK, .5, false, flash.display.LineScaleMode.NONE);
+// this.graphics.moveTo(12, 12);
+// this.graphics.lineTo(12, 24);

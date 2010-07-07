@@ -1,0 +1,38 @@
+this.graphics.clear();
+
+
+/** Draw Ticks **/
+this.graphics.lineStyle(1, this.disabled ? 
+							Color.darken(DefaultStyle.BACKGROUND, 20) :
+							Color.darken(this.color, 35));
+var s = this.box.width/this.ticks;
+for(i in 1...this.ticks) {
+	/*top*/
+	this.graphics.moveTo(i*s, .5*this.box.height - .25*this.box.height );
+	this.graphics.lineTo(i*s, .5*this.box.height - .375*this.box.height );
+	/*bottom*/
+	this.graphics.moveTo(i*s, .5*this.box.height + .375*this.box.height);
+	this.graphics.lineTo(i*s, .5*this.box.height + .25*this.box.height );
+}
+
+/** Draw the track */
+var colors = [ Color.darken(this.color, 30), this.color ] ;
+if(this.disabled) 
+	colors = [ Color.darken(this.color, 10), this.color ] ;
+var alphas =[1, 1];
+var ratios =[0, 0xFF];
+var matrix = new flash.geom.Matrix ();
+matrix.createGradientBox (this.box.width, this.box.height, .5*Math.PI, 0, 0);
+
+this.graphics.lineStyle(.25*this.box.height);
+this.graphics.lineGradientStyle (flash.display.GradientType.LINEAR, colors, alphas, ratios, matrix);
+
+this.graphics.moveTo(0, .5*this.box.height);
+this.graphics.lineTo(this.box.width, .5*this.box.height);
+
+
+/** Frame **/
+this.graphics.lineStyle(0,0,0);
+this.graphics.beginFill(0,0);
+this.graphics.drawRect(0,0,this.box.width,this.box.height);
+this.graphics.endFill();

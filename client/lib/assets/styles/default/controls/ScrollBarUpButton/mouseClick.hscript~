@@ -1,0 +1,6 @@
+if(this.disabled) return;
+	event.target.updateColorTween( new feffects.Tween(50, -50, 500, feffects.easing.Expo.easeOut) );
+	CursorManager.setCursor(this.cursorPress);
+
+if(parent.handle.y>20)
+	parent.handle.updatePositionTween( new feffects.Tween(0, 1, 750, feffects.easing.Linear.easeOut ), new flash.geom.Point(0, -parent.adjustment.getStep()), parent.adjust);

@@ -1,0 +1,4 @@
+trace(event);
+this.swapParent(this.oldParent);
+this.stopDrag();
+this.moveToPoint(parent.globalToLocal(this.oldPos));

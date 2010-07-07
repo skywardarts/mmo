@@ -1,0 +1,6 @@
+// parent.handle.updatePositionTween(
+// new feffects.Tween( 0, 1, 200, feffects.easing.Linear.easeNone ),
+// new flash.geom.Point(0, -parent.adjustment.object.step), parent.adjust);
+
+parent.handle.y -= parent.adjustment.getStep();
+parent.adjust();

@@ -1,0 +1,53 @@
+this.graphics.clear();
+
+var colors = [this.color, Color.darken(this.color, 30) ] ;
+
+if(this.active)
+	colors = [ Color.tint(this.color, .8), this.color ] ;
+
+var alphas = [1, 1];
+var ratios = [0, 0xFF];
+var matrix = new flash.geom.Matrix ();
+matrix.createGradientBox (this.box.width, this.box.height, .5*Math.PI, 0, 0);
+
+	
+this.graphics.lineStyle(1);
+this.graphics.lineGradientStyle (flash.display.GradientType.LINEAR, 
+		[ Color.darken(this.color, 50), this.color ], alphas, ratios, matrix);
+
+ 
+this.graphics.beginGradientFill (flash.display.GradientType.LINEAR, colors, alphas, ratios, matrix);			 
+this.graphics.drawRoundRectComplex( 0, 4, this.box.width, this.box.height-4, 4, 4, 0, 0 );
+this.graphics.endFill();
+
+matrix.createGradientBox (this.box.width, 4, .5*Math.PI, 0, 4);
+this.graphics.beginGradientFill (flash.display.GradientType.LINEAR,
+			    [ this.active ? Color.darken(this.color, 16) : this.color,
+				this.active ? Color.darken(this.color, 50) : Color.darken(this.color, 16) ],
+				alphas, ratios, matrix);			 
+this.graphics.drawRoundRectComplex( 0, 4, this.box.width, 4, 4, 4, 0, 0 );
+this.graphics.endFill();
+
+
+
+/*
+if (this.filters.length == 0)
+  {
+    var shadow =
+      new flash.filters.DropShadowFilter (this.disabled ? 2 : 4, 45,
+					  DefaultStyle.DROPSHADOW,
+					  this.disabled ? 0.2 : 0.5,
+					  4, 4, 0.5,
+					  flash.filters.BitmapFilterQuality.
+					  HIGH,
+					  false, false, false);
+    this.filters =[shadow];
+  }
+*/
+
+
+if (this.label != null)  
+    this.label.moveTo ( (this.box.width - this.label.width)>>1,
+		       			.5*(this.box.height - this.label.height) + 4 );
+  
+

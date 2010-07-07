@@ -1,0 +1,3 @@
+if(this.disabled) return;
+// event.target.updateColorTween( new feffects.Tween(-50, 0, 150, feffects.easing.Expo.easeOut) );
+this.redraw();

@@ -1,0 +1,6 @@
+this.getElementsByClass(windowClasses.TitleBar).next().color = Color.tint(this.color, .5);
+this.getElementsByClass(windowClasses.TitleBar).next().redraw();
+//this.getElementsByClass(windowClasses.TitleBar).next().filters = [new flash.filters.GlowFilter (DefaultStyle.FOCUS, .5, 4, 4, 1, flash.filters.BitmapFilterQuality.HIGH, false, false)];
+//this.getElementsByClass(windowClasses.TitleBar).next().getElementsByClass(controls.Label).next().filters = [new flash.filters.GlowFilter (Color.WHITE, 1, 3, 3, 2, flash.filters.BitmapFilterQuality.HIGH, true, false)];
+
+this.getElementsByClass(windowClasses.WindowFrame).next().filters =[new flash.filters.DropShadowFilter (8, 45, DefaultStyle.DROPSHADOW, 0.5, 8, 8, 0.75, flash.filters.BitmapFilterQuality.LOW, false, false, false)];

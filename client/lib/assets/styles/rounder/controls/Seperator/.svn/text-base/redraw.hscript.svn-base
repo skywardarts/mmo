@@ -1,0 +1,16 @@
+var m = this.box.width>>1;
+
+this.graphics.lineStyle(1, Color.darken(DefaultStyle.BACKGROUND, 50));
+this.graphics.moveTo(m, 0);
+this.graphics.lineTo(m, this.box.height);
+
+this.graphics.lineStyle(1, Color.tint(DefaultStyle.BACKGROUND, .5));
+this.graphics.moveTo(m+1, 0);
+this.graphics.lineTo(m+1, this.box.height);
+
+/*
+this.graphics.lineStyle(0,0,0);
+this.graphics.beginFill(m,0);
+this.graphics.drawRect(m-2,0,4,this.box.height-12);
+this.graphics.endFill();
+*/

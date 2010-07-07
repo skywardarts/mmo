@@ -1,0 +1,23 @@
+this.graphics.clear();
+
+this.graphics.lineStyle (1,
+	this.disabled ? Color.darken(this.color, 5) : Color.darken(this.color, 16),
+	1, false, 
+	flash.display.LineScaleMode.NONE,
+	flash.display.CapsStyle.NONE,
+	flash.display.JointStyle.ROUND
+	);
+	
+var colors = [ this.disabled ? Color.darken(this.color, 10) : Color.darken(this.color, 20), 
+			   this.disabled ? this.color : Color.darken(this.color, 10) ];
+var alphas = [1, 1];
+var ratios = [0, 0xFF];
+var matrix = new flash.geom.Matrix();
+matrix.createGradientBox(this.box.width, this.box.height, .5*Math.PI, 0, 0);
+this.graphics.beginGradientFill( flash.display.GradientType.LINEAR, colors, alphas, ratios, matrix );
+this.graphics.drawRect(0, 0, this.box.width, this.box.height );
+this.graphics.endFill();
+
+
+
+

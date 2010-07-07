@@ -1,0 +1,26 @@
+this.graphics.clear();
+
+
+this.graphics.beginFill (this.color, this.selected ? 1 : 0);
+this.graphics.drawRect (0, 0, this.box.width, this.box.height);
+this.graphics.endFill ();
+
+if(this.expander.expanded) {
+	var y = this.expander.numChildren - 2;
+	// var y = this.transform.pixelBounds.height;
+
+	this.graphics.lineStyle(1, Color.BLACK, .5, false, flash.display.LineScaleMode.NONE);
+	this.graphics.moveTo(12, 12);
+	this.graphics.lineTo(12, 12 + y*24);
+	// this.graphics.lineTo(12, y);
+	if(this.expander.numChildren>2)
+	for(i in 1...(y+1)) {
+	// for(i in 0...Math.round(y/24)) {
+		// if(i>this.numChildren) return;
+		this.graphics.moveTo(12, 12+24*i);
+		this.graphics.lineTo(24, 12+24*i);
+		this.graphics.beginFill(this.color);
+		this.graphics.drawCircle(12,12+24*i, 2);
+		this.graphics.endFill();
+	}
+}

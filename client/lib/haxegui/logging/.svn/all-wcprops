@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/270/trunk/haxegui/logging
+END
+LogEntry.hx
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/270/trunk/haxegui/logging/LogEntry.hx
+END
+ILogger.hx
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/262/trunk/haxegui/logging/ILogger.hx
+END
+LogLevel.hx
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/242/trunk/haxegui/logging/LogLevel.hx
+END
+ErrorType.hx
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/242/trunk/haxegui/logging/ErrorType.hx
+END

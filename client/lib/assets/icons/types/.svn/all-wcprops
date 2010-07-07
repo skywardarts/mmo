@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/192/trunk/assets/icons/types
+END
+type-integer.png
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/189/trunk/assets/icons/types/type-integer.png
+END
+type-boolean.png
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/189/trunk/assets/icons/types/type-boolean.png
+END
+type-schema.png
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/189/trunk/assets/icons/types/type-schema.png
+END
+type-undefined.png
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/189/trunk/assets/icons/types/type-undefined.png
+END
+type-float.png
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/191/trunk/assets/icons/types/type-float.png
+END
+type-class.png
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/192/trunk/assets/icons/types/type-class.png
+END
+type-function.png
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/192/trunk/assets/icons/types/type-function.png
+END
+type-string.png
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/189/trunk/assets/icons/types/type-string.png
+END
+type-list.png
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/189/trunk/assets/icons/types/type-list.png
+END
+type-pair.png
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/189/trunk/assets/icons/types/type-pair.png
+END

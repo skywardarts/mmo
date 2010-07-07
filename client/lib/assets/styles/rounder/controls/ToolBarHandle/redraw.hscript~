@@ -1,0 +1,5 @@
+this.graphics.clear();
+this.graphics.lineStyle(1, Color.darken(this.parent.color, 20));
+this.graphics.beginFill(Color.darken(this.parent.color, 10));
+this.graphics.drawRoundRect(0, 0, 8, this.parent.box.height - 16, 4, 4);
+this.graphics.endFill();

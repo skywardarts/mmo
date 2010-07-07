@@ -1,0 +1,4 @@
+this.graphics.clear();
+this.graphics.beginFill(this.color);
+this.graphics.drawRect(0, 0, this.box.width, this.box.height );
+this.graphics.endFill();

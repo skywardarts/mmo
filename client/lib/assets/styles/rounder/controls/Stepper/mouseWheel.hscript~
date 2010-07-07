@@ -1,0 +1,4 @@
+if(!this.disabled) 
+	//this.__setValue(this.__getValue() + event.delta * this.step);
+	this.adjustment.__setValue( this.adjustment.value + this.adjustment.step * event.delta );
+

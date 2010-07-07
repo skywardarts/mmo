@@ -1,0 +1,3 @@
+this.adjustment.__setValue( this.adjustment.value + event.delta * this.adjustment.step * ((this.rotation > 0) ? -1 : 1) );
+if(event.ctrlKey)
+this.adjustment.__setValue( this.adjustment.value + event.delta * this.adjustment.page * ((this.rotation > 0) ? -1 : 1) );

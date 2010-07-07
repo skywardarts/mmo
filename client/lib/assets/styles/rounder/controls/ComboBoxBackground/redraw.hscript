@@ -1,0 +1,14 @@
+var h = this.parent.box.height;
+var w = this.parent.box.width - this.parent.dropButton.box.width;
+
+var colors = [ Color.tint(this.color, .8), Color.darken(this.color, 8) ];
+var matrix = new flash.geom.Matrix();
+
+matrix.createGradientBox(w, h*2, .5*Math.PI, 0, 0);
+
+this.graphics.lineStyle (1, Color.darken(DefaultStyle.BACKGROUND, 16), 1, true, flash.display.LineScaleMode.NONE, flash.display.CapsStyle.ROUND, flash.display.JointStyle.ROUND );
+this.graphics.beginGradientFill( flash.display.GradientType.LINEAR, colors, [1, 1], [0, 0x66], matrix );
+this.graphics.drawRoundRectComplex(0, 0, w, h, 4, 0, 4, 0);
+this.graphics.endFill();
+
+this.filters = [new flash.filters.DropShadowFilter( 2, 45, DefaultStyle.DROPSHADOW, .5, 4, 4, .5, flash.filters.BitmapFilterQuality.HIGH,	false, false, false )];

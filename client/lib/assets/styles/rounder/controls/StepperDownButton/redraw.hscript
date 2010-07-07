@@ -1,0 +1,17 @@
+this.graphics.clear();
+
+var c2 = Color.darken(this.color, 20);
+
+var colors = [ this.disabled ? this.color : Color.tint(this.color, .8), c2 ];
+
+var matrix = new flash.geom.Matrix();
+matrix.createGradientBox(this.box.width, this.box.height, .5*Math.PI, 0, 0);
+
+this.graphics.lineStyle (1, c2, 1, true, flash.display.LineScaleMode.NONE, flash.display.CapsStyle.ROUND, flash.display.JointStyle.ROUND);
+this.graphics.beginGradientFill( flash.display.GradientType.LINEAR, colors, [1, 1], [0, 0xFF], matrix );
+this.graphics.drawRoundRectComplex(0, 0, this.box.width, this.box.height, 0, 0, 0, 4);
+this.graphics.endFill();
+
+this.moveTo( this.parent.box.width - 10, this.box.height );
+
+this.filters = [new flash.filters.DropShadowFilter( 0, 45, DefaultStyle.DROPSHADOW, 0.5, 4, 4, 0.5, flash.filters.BitmapFilterQuality.HIGH, false, false, false)];

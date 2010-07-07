@@ -1,0 +1,40 @@
+this.graphics.clear();
+
+var i = parent.getChildIndex(this) ;
+var c = (i%2==0) ? this.color :  Color.darken(this.color, 10);
+
+/*
+if(this.hasFocus()) 
+this.graphics.lineStyle (4,
+	Math.max(0, Math.min(0xFFFFFF, DefaultStyle.BACKGROUND - 0x282828)),
+	1, true, 
+	flash.display.LineScaleMode.NONE,
+	flash.display.CapsStyle.ROUND,
+	flash.display.JointStyle.ROUND
+	);
+*/
+	
+this.graphics.beginFill ( c );
+this.graphics.drawRect (0, 0, parent.box.width, 20);
+this.graphics.endFill ();
+
+
+//~ if( this.parent.data[i]!=null && this.label!=null) 
+	//~ this.tf.text = this.parent.data[i];
+	//~ this.label.tf.text = this.parent.data[i];
+	
+/*
+this.tf.x = 4;
+this.tf.y = 4;
+this.tf.width = this.box.width - 4;
+this.tf.height = this.box.height - 4;
+*/
+/*this.tf.setTextFormat( DefaultStyle.getTextFormat() );*/
+
+/*
+if(i==1)
+{
+		var shadow = new flash.filters.DropShadowFilter (2, 90, DefaultStyle.DROPSHADOW, 0.75, 4, 4, 0.5, flash.filters.BitmapFilterQuality.HIGH, true, false, false );
+		this.filters = [shadow];	
+}
+*/

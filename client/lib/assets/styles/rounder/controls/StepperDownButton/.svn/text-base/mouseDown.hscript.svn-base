@@ -1,0 +1,10 @@
+if(this.disabled) return;
+
+if(this.autoRepeat) {
+	this.parent.adjustment.setValue ( this.parent.adjustment.getValue() - this.parent.adjustment.object.step );
+	this.startIntervalDelayed(this.repeatsPerSecond, this.repeatWaitTime);
+}
+
+this.updateColorTween( new feffects.Tween(50, -50, 350, feffects.easing.Linear.easeOut) );
+CursorManager.setCursor(this.cursorPress);
+

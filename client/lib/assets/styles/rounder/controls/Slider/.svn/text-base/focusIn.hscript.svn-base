@@ -1,0 +1,3 @@
+var glow = new flash.filters.GlowFilter (DefaultStyle.FOCUS, 1, 8, 8, 1, flash.filters.BitmapFilterQuality.HIGH, false, false);
+this.filters = [glow];
+		
